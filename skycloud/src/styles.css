@@ -1,0 +1,15 @@
+.grid{
+  display:grid;
+}
+
+body{margin:0;padding:0;}
+.center{
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.file-icons{
+  font-size: 2em;
+  margin-right: 10px;
+  color:rgb(255, 0, 34);
+}

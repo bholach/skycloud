@@ -1,0 +1,22 @@
+{
+  "name": "skycloud",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node skycloud"
+  },
+  "author": "sky team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  }
+}

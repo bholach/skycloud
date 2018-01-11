@@ -1,0 +1,67 @@
+
+<div class="dashboard">
+  <h2>DashBoard</h2>
+  <hr>
+   <div class="grid dash-items">
+
+     <div class="items">
+         <div class="icon">
+            <i class="fas fa-file"></i>
+         </div>
+        <label>Documents</label>
+        <label>Size : {{doc_size}} MB</label>
+     </div>
+
+     <div class="items placeholder">
+            <div class="icon">
+                    <i class="fas fa-image"></i>
+                 </div>
+         <label>image</label>
+         <label>Size : {{img_size}} MB</label>
+      </div>
+
+      <div class="items placeholder">
+            <div class="icon">
+                    <i class="fas fa-music"></i>
+                 </div>
+           <label>audios</label>
+           <label>Size : {{audio_size}} MB</label>
+        </div>
+
+        <div class="items placeholder">
+                <div class="icon">
+                        <i class="fas fa-film"></i>
+                     </div>
+             <label>videos</label>
+             <label>Size : {{video_size}} MB</label>
+          </div>
+
+          <div class="items placeholder">
+                <div class="icon">
+                        <i class="fas fa-archive"></i>
+                     </div>
+               <label>archeives</label>
+               <label>Size : {{arch_size}} MB</label>
+            </div>
+
+            <div class="items placeholder">
+                    <div class="icon">
+                            <i class="fas fa-folder"></i>
+                         </div>
+                 <label>others</label>
+                 <label>Size : {{other_size}} MB</label>
+              </div>
+
+  </div>
+  <!-- end of grid items-->
+  <div class="storage">
+      <div class="progress">
+
+          <div class="progress-bar progress-bar-warning" style="width:60%">
+              <label>storage 5gb/15gb</label>
+          </div>
+
+        </div>
+  </div>
+
+</div>

@@ -1,0 +1,171 @@
+<div  id="page">
+
+<div class="panel panel-default">
+  <!--//options-->
+  <div class="option grid">
+  <div class="panel-body">
+    <ul class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home" ></i>Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ul>
+  </div>
+
+  <div class="loptions"  >
+      <div class="btn-group">
+          <a class="btn btn-primary">More Options</a>
+          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-ellipsis-v" ></i></a>
+          <ul class="dropdown-menu">
+              <li (click)="show_ubox()"><a>Upload Files</a></li>
+            
+            <li class="divider"></li>
+            <li  (click)="show_cfbox()"><a>Create Folder</a></li>
+          </ul>
+        </div>
+  </div>
+  
+  <div class="loptions" *ngIf="currfile">
+      <ul class="options">  
+          <li><a href="{{currfile.dlink}}" target="_blank"><i class="fa fa-eye"></i></a></li>
+          <li><i class="fa fa-share-alt" ></i></li>
+          <li ><a href="{{currfile.dlink}}" target="_blank"><i class="fa fa-download" ></i></a></li>
+          <li (click)="info_on()"><i class="fa fa-info-circle" ></i></li>
+          <li><i class="fa fa-trash" ></i></li>
+        </ul>
+  </div>
+  <div  class="loptions" *ngIf="!currfile"></div>
+  <div class="lmenu">
+      <ul class="options">
+          <li *ngIf="list" (click)="viewG()"><i class="fa fa-th" ></i></li>  
+          <li *ngIf="grid" (click)="viewL()"><i class="fa fa-list" ></i></li>         
+          <li><i class="fa fa-ellipsis-v" ></i></li>
+        </ul>
+
+  </div>
+</div>
+ <!-- list view-->
+  <div class="panel-body" *ngIf="list">
+    <ul class="ul_table" >
+      <li class="thead">
+        <ul>
+          <li>#</li>
+          <li></li>
+          <li>Files</li>
+          <li>Size</li>
+            <li>Upload Date</li>
+          </ul>
+        </li>
+
+      <li class="tbody" *ngIf="fileData">
+        <ul class="files_list" *ngFor="let file of fileData" (click)="file_clicked(file)" id="#">
+          <li>{{ count }}</li>
+          <li><i class="fas fa-{{file.cat}} file-icons" aria-hidden="true"></i></li>
+            <li> {{file.name}}</li>
+              <li>{{ file.size}} &nbsp;bytes</li>
+                <li>{{ file.date }}</li>   
+                  
+          </ul>
+          
+        </li>
+        <li class="tbody" *ngIf="!fileData">
+            <ul class="">
+              <li>No Files !</li>  
+              </ul>
+            </li>
+        </ul>
+  </div>
+
+  <!-- grid view-->
+  <div class="panel-body" *ngIf="grid">
+     <div class="file_card" *ngFor="let file of fileData" (click)="file_clicked(file)">
+          <div class="thumb">
+            <i class="fas fa-image"></i>
+          </div>
+          <div class="item_name">
+              {{ file.name}}
+          </div>
+     </div>
+  </div>
+
+
+</div>
+<!-- upload model -->
+<div class="box_model" *ngIf="box">
+
+  <div class="panel panel-primary btn-file" id="pop_box">
+    <div class="panel-heading">
+      <h3 class="panel-title">Upload File
+          <button type="button" class="close" data-dismiss="alert" (click)="boxclose()">&times;</button>
+      </h3>
+    </div>
+    <div class="panel-body form_box">
+      <form action="/uploadfile" method="POST" enctype="multipart/form-data">
+      <label class="btn btn-default">
+        BrowseFile <input type="file" name="file">
+    </label><br><br>
+    <input type="submit" class="btn btn-success" value="upload">
+    </form>
+    </div>
+  </div>
+</div>
+<!--create folder -->
+<div class="box_model" *ngIf="cfbox">
+    <div class="panel panel-primary btn-file" id="pop_box">
+      <div class="panel-heading">
+        <h3 class="panel-title">Create Folder
+            <button type="button" class="close" data-dismiss="alert" (click)="cfboxclose()">&times;</button>
+        </h3>
+      </div>
+      <div class="panel-body form_box">
+        <form action="/uploadfile" method="POST" enctype="multipart/form-data">
+          <div class="form-group grid">
+              <label>Folder Name</label>
+              <input type="text" class="form-control" [(ngModel)]="fname" name="fname" >
+            </div>
+            <div class="form-group grid">
+                <a></a>
+               <input type="submit" class="btn btn-success" value="Create Folder">
+             </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+<!--side info-->
+
+<div class="panel panel-default" *ngIf="finfo">
+    <div class="panel-heading">
+      <h3 class="panel-title">File info
+          <button type="button" class="close" data-dismiss="alert" (click)="info_close()">&times;</button>
+      </h3>
+    </div>
+    <div class="info_box"  *ngIf="currfile">
+      <ul class="grid prop">
+        <li>Name</li>
+        <li>:</li>
+        <li>{{currfile.name}}</li>
+      </ul>
+      <ul class="grid prop">
+          <li>Size</li>
+          <li>:</li>
+          <li>{{currfile.name}}</li>
+        </ul>
+        <ul class="grid prop">
+            <li>Upload Date</li>
+            <li>:</li>
+           <li>{{currfile.date}}</li>
+          </ul>
+          <ul class="grid prop">
+              <li>Category</li>
+              <li>:</li>
+             <li>{{currfile.cat}}</li>
+            </ul>
+            <ul class="grid prop">
+                <li>property</li>
+                <li>:</li>
+                <li>{{currfile.name}}</li>
+              </ul>
+          </div>
+  </div>
+</div>

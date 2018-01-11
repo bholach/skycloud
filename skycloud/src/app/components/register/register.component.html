@@ -1,0 +1,105 @@
+<div class="reg-form grid">
+<div class="box">
+<h2 >Register</h2>
+<hr>
+<div class="alert alert-dismissible alert-warning" *ngIf="error">
+  <button type="button" class="close" data-dismiss="alert" (click)="close()">&times;</button>
+  <strong>{{ errmsg }}</strong>  &nbsp;and try submitting again.
+</div>
+<div class="form-box">
+<form (submit)="onRegisterSubmit()">
+  <div class="form-group grid">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name" name="name" class="form-control">
+  </div>
+  <div class="form-group grid">
+    <label>Username</label>
+    <input type="text" [(ngModel)]="username" name="username" class="form-control">
+  </div>
+  <div class="form-group grid">
+    <label>Email</label>
+    <input type="text" [(ngModel)]="email" name="email" class="form-control" >
+  </div>
+  <div class="form-group grid">
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" class="form-control">
+  </div>
+  <div class="form-group grid">
+      <label>Confirm-Password</label>
+      <input type="password" [(ngModel)]="cpassword" name="cpassword" class="form-control">
+    </div>
+    <div class="terms grid">
+        <input type="checkbox" [(ngModel)]="term" name="term">
+        <p>Accept </p><a (click)="showtbox()">Terms &  Conditions</a>
+      </div>
+  <div class="form-group grid">
+    <p></p>
+      <input type="submit" class="btn btn-success" value="Register">
+  </div>
+
+</form>
+
+<hr>
+<div class="form-group grid">
+    <label>Already Registred ?</label>
+    <a class="btn btn-warning" [routerLink]="['/login']">Login</a>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div id="terms-condition" *ngIf="tbox">
+  <div class="terms-box">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Terms And Conditions
+          <button type="button" class="close" data-dismiss="alert" (click)="boxclose()">&times;</button>
+        </h3>
+
+      </div>
+      <div class="panel-body">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Maxime corporis est non nostrum, molestiae doloribus.
+        Magni odio atque repudiandae ad quod porro eaque, ullam quia
+        quae quasi? Accusamus, aut autem?
+      </div>
+    </div>
+  </div>
+</div>

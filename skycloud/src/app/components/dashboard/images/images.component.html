@@ -1,0 +1,52 @@
+<div class="panel panel-info">
+<div class="panel-heading">
+  <h3 class="panel-title center">Images</h3>
+</div>
+
+
+<!-- table -->
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Images</th>
+      <th>Size</th>
+      <th>Upload Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="fileData">
+      <tr class="" *ngFor="let file of fileData">
+        <td>{{ count }}</td>
+        <td><i class="fas fa-{{file.cat}} file-icons" aria-hidden="true"></i>{{ file.name}}</td>
+        <td>{{ file.size}} &nbsp;bytes</td>
+        <td>{{ file.date }}</td>        
+        <td>
+          <a (click)="download(file)" ><i class="fas fa-download"></i></a><span></span>
+          <a (click)="download(file)" ><i class="fas fa-share-alt"></i></a>
+        </td>
+      </tr>
+      </tbody>
+      <tbody *ngIf="!fileData">
+        <tr><td></td>
+          <td>No Files !</td>
+        </tr>
+      </tbody>
+
+    </table>
+<!-- table -->
+
+<ul class="pagination">
+  <li class="disabled"><a href="#">&laquo;</a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+
+</div>
+
+
+

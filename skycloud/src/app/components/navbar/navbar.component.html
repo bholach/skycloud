@@ -1,0 +1,46 @@
+<nav class="navbar-inverse fixed">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><label id="logo">SkyCloud</label></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/']">Home</a></li>
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/features']">Features</a></li>
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/about']">AboutUs</a></li>
+            <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/profile']">Profile</a></li>
+
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+            <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
+
+            <li *ngIf="authService.loggedIn()" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Profile <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+

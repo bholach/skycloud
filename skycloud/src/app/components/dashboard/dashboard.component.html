@@ -1,0 +1,50 @@
+<div class="grid dash-head">
+  <div class="options">
+       <h4>User Dashboard</h4>
+       <hr>
+       <div class="menu">
+         <ul >
+           <li  (click)="dash_toggle()" id="dashboard"><i class="fas fa-dashcube"></i><a>Dashboard</a></li>
+           <li (click)="home_toggle()" id="home"><i class="fas fa-home"></i><a >Home</a></li>
+           <li  (click)="doc_toggle()" id="doc"><i class="fas fa-video"></i><a >  Documents</a></li>
+           <li (click)="audio_toggle()" id="audio"><i class="fas fa-music"></i> <a > Audios</a></li>
+           <li (click)="video_toggle()" id="video"><i class="fas fa-video"></i><a>  Videos</a></li>
+           <li (click)="image_toggle()" id="image"><i class="fas fa-image fa-1x"></i><a >  Images</a></li>
+           <li (click)="zip_toggle()" id="zip"><i class="fas fa-archive"></i> <a > Archives</a></li>
+           <li (click)="other_toggle()" id="other"><i class="fas fa-file"></i><a >  Others</a></li>
+         </ul>
+       </div>
+  </div>
+<div *ngIf= "dashboard">
+  <app-driveinfo></app-driveinfo>
+</div>
+
+<div *ngIf= "home">
+  <app-dashhome></app-dashhome>
+</div>
+
+<div *ngIf= "documents">
+  <app-documents></app-documents>
+</div>
+
+<div *ngIf= "audio">
+  <app-audios></app-audios>
+</div>
+
+<div *ngIf= "video">
+  <app-videos></app-videos>
+</div>
+
+<div *ngIf= "image">
+  <app-images></app-images>
+</div>
+
+<div *ngIf= "zip">
+  <app-zips></app-zips>
+</div>
+
+<div *ngIf= "other">
+  <app-others></app-others>
+</div>
+
+</div>
