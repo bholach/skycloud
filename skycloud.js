@@ -24,7 +24,7 @@ mongoose.connection.on('error', (err) => {
 
 const bodyparser = require('body-parser');
 const app = express();
-port = process.env.port || 3000;
+port = process.env.PORT || 3000;
 
 // CORS Middleware
 app.use(cors());
